@@ -1,0 +1,156 @@
+  
+  .toasts {
+    position: fixed;
+    top: 24px;
+    right: 10px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+    z-index: 999999;
+  }
+  
+  .toasts.active {
+    transform: translateX(0%);
+  
+  }
+  
+  .toasts .toasts-content {
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+    height: auto;
+  }
+  
+  .toasts-content .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    min-width: 35px;
+    background-color: #018937;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+  }
+  
+  .toasts-content .message {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    /* max-width: 250px; */
+  }
+  
+  .message .text {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666666;
+    /* max-width: 250px; */
+  }
+  
+  .message .text.text-1 {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .toasts .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  
+  .toasts .close:hover {
+    opacity: 1;
+  }
+  
+  .toasts .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+  }
+  
+  .toasts .progress:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #018937;
+  }
+  
+  .progress.active:before {
+    animation: progress 3s linear forwards;
+  }
+  
+  @keyframes progress {
+    100% {
+      right: 100%;
+    }
+  }
+
+  .toasts .progressError {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+  }
+  
+  .toasts .progressError:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #e4111d;
+  }
+  
+  .progressError.active:before {
+    animation: progress 3s linear forwards;
+  }
+  
+  @keyframes progressError {
+    100% {
+      right: 100%;
+    }
+  }
+
+  .toasts .progressWarn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+  }
+  
+  .toasts .progressWarn:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #FEC447;
+  }
+  
+  .progressWarn.active:before {
+    animation: progress 3s linear forwards;
+  }
+  
+  @keyframes progressWarn {
+    100% {
+      right: 100%;
+    }
+  }
+  
